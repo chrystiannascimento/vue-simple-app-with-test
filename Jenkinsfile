@@ -10,7 +10,7 @@ pipeline {
                     docker compose version
                 '''
             }
-        },
+        }
         stage('Build') {
             steps {
                 sh '''
@@ -18,6 +18,6 @@ pipeline {
 
                 '''
             }
-        },
+        }
     }
 }
