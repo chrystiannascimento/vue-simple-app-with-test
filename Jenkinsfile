@@ -3,13 +3,21 @@ pipeline {
     agent any
     
     stages {
-        stage(‘Build’) {
+        stage('Tooling versions') {
             steps {
                 sh '''
                     docker --version
                     docker compose version
                 '''
             }
-        }
+        },
+        stage('Build') {
+            steps {
+                sh '''
+                    docker compose up -d
+
+                '''
+            }
+        },
     }
 }
