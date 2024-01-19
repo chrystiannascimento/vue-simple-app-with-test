@@ -1,22 +1,10 @@
 pipeline {
-    
     agent any
-    
-    stages {
-        stage('Tooling versions') {
-            steps {
-                sh '''
-                    docker --version
-                    docker compose version
-                '''
-            }
-        }
-        stage('Build') {
-            steps {
-                sh '''
-                    docker compose up -d
 
-                '''
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World from PRIVATE repo MAIN branch.'
             }
         }
     }
