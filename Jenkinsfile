@@ -1,10 +1,14 @@
 pipeline {
-    agent any
-
+    agent {
+        docker {
+            image 'node:20.11.0-alpine3.19' 
+            args '-p 3000:3000' 
+        }
+    }
     stages {
-        stage('Hello') {
+        stage('Build') { 
             steps {
-                echo 'Hello World from PRIVATE repo MAIN branch.'
+                sh 'npm install' 
             }
         }
     }
